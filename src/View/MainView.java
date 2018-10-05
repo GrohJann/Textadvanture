@@ -10,6 +10,7 @@ public class MainView extends JFrame{
     
     // Referenzen
     private MainController mainController;
+    private JPanel startPanel;
     private JPanel gamePanel;
     
     /**
@@ -19,13 +20,13 @@ public class MainView extends JFrame{
     public MainView(MainController mainController) {
         
         this.mainController = mainController;
-        this.gamePanel = new GamePanelHandler(this).getPanel();
+        this.startPanel = new StartPanelHandler(this).getPanel();
         
         this.setResizable(false);
         this.setTitle("Textadventure");
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setVisible(true);
-        
+    
         try {
             UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
         } catch (ClassNotFoundException e) {
