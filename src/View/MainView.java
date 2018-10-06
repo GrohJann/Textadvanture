@@ -1,42 +1,28 @@
 package View;
 
-import Controller.MainController;
+import javafx.application.Application;
+import javafx.scene.Scene;
+import javafx.scene.control.Button;
+import javafx.scene.layout.StackPane;
+import javafx.stage.Stage;
 
-import javax.swing.*;
-
-public class MainView extends JFrame{
+public class MainView extends Application {
+    private Button button;
     
-    // Attribute
+    public MainView() {
+    }
     
-    // Referenzen
-    private MainController mainController;
-    private JPanel startPanel;
-    private JPanel gamePanel;
+    @Override
+    public void start(Stage primaryStage) {
+        primaryStage.setTitle("Text Adventure");
+        button = new Button();
+        button.setText("Start Game");
     
-    /**
-     * Konstruktor
-     * @param mainController Ein Referenz auf ein Controller-Objekt.
-     */
-    public MainView(MainController mainController) {
-        
-        this.mainController = mainController;
-        this.startPanel = new StartPanelHandler(this).getPanel();
-        
-        this.setResizable(false);
-        this.setTitle("Textadventure");
-        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        this.setVisible(true);
+        StackPane layout = new StackPane();
+        layout.getChildren().add(button);
     
-        try {
-            UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
-        } catch (ClassNotFoundException e) {
-            e.printStackTrace();
-        } catch (InstantiationException e) {
-            e.printStackTrace();
-        } catch (IllegalAccessException e) {
-            e.printStackTrace();
-        } catch (UnsupportedLookAndFeelException e) {
-            e.printStackTrace();
-        }
+        Scene scene =new Scene(layout, 500,500);
+        primaryStage.setScene(scene);
+        primaryStage.show();
     }
 }
