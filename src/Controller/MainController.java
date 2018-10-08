@@ -12,7 +12,7 @@ public class MainController extends Application {
     }
     
     @Override
-    public void start(Stage primaryStage) {
+    public void start(Stage primaryStage) throws Exception{
         mainView = new MainView();
         mainView.start(primaryStage);
     }

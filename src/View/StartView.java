@@ -1,37 +1,33 @@
 package View;
 
 import javafx.application.Application;
+import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.layout.StackPane;
+import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
+import java.io.IOException;
 
 public class StartView extends Application {
-    private Button button;
-    private StackPane layout;
-    private Scene scene;
-    
     private Stage primaryStage;
+    private AnchorPane mainLayout;
     
     StartView(){
-        button = new Button();
-        layout = new StackPane();
-        scene =new Scene(layout, 500,500);
     }
     
     @Override
-    public void start(Stage primaryStage) {
-        primaryStage.setTitle("Text Adventure");
-        button.setText("Start Game");
-        
-        layout.getChildren().add(button);
-        
-        primaryStage.setScene(scene);
-        primaryStage.show();
+    public void start(Stage primaryStage) throws IOException{
+        this.primaryStage = primaryStage;
+        this.primaryStage.setTitle("Text Adventure");
+        this.showStartView();
     }
-    
-    public Button getButton(){
-        return button;
+    private void showStartView() throws IOException{
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(GameView.class.getResource("startScene.fxml"));
+        mainLayout = loader.load();
+        Scene scene = new Scene(mainLayout);
+        this.primaryStage.setScene(scene);
+        this.primaryStage.show();
     }
+
 }
 
