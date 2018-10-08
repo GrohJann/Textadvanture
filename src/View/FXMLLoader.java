@@ -1,5 +1,6 @@
 package View;
 
+import View.FXMLFiles.StartSceneController;
 import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
@@ -17,5 +18,9 @@ public class FXMLLoader {
         Scene scene = new Scene(mainLayout);
         primaryStage.setScene(scene);
         primaryStage.show();
+        
+        
+        StartSceneController controller = new StartSceneController();
+        loader.setController(controller);
     }
 }
