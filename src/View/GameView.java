@@ -18,13 +18,12 @@ public class GameView extends Application {
     public void start(Stage primaryStage) throws IOException{
         this.primaryStage = primaryStage;
         this.primaryStage.setTitle("Text Adventure");
-        //FXMLLoader.loadFXML("../gameScene.fxml",this.primaryStage, this.mainLayout);
-        showGameView();
+        View.FXMLLoader.loadFXML("FXMLFiles/gameScene.fxml",this.primaryStage, this.mainLayout);
     }
     
     private void showGameView() throws IOException{
         FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(GameView.class.getResource("gameScene.fxml"));
+        loader.setLocation(GameView.class.getResource("FXMLFiles/gameScene.fxml"));
         mainLayout = loader.load();
         Scene scene = new Scene(mainLayout);
         this.primaryStage.setScene(scene);

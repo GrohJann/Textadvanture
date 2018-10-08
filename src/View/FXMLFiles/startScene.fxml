@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="778.0" prefWidth="1400.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="View.FXMLFiles.StartSceneController">
+   <children>
+      <AnchorPane prefHeight="778.0" prefWidth="1400.0" style="-fx-background-color: #1c1a17;">
+         <children>
+            <AnchorPane layoutX="476.0" layoutY="327.0" prefHeight="68.0" prefWidth="401.0">
+               <children>
+                  <ImageView fx:id="startBtn" fitHeight="139.0" fitWidth="448.0"  pickOnBounds="true" preserveRatio="true" onMouseClicked="#btnClicked">
+                     <image>
+                        <Image url="@../../assets/pictures/gui_pics/Button/BtnNormal.png" />
+                     </image>
+                  </ImageView>
+                  <Label alignment="CENTER" layoutX="63.0" layoutY="28.0" prefHeight="67.0" prefWidth="319.0" text="Start" textFill="WHITE" onMouseClicked="#btnClicked">
+                     <font>
+                        <Font name="Serif Bold" size="58.0" />
+                     </font></Label>
+               </children>
+            </AnchorPane>
+         </children></AnchorPane>
+   </children>
+</AnchorPane>

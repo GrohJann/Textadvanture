@@ -14,6 +14,7 @@ public class MainView extends Application {
     
     @Override
     public void start(Stage primaryStage) throws Exception{
-        gameView.start(primaryStage);
+        primaryStage.setResizable(false);
+        startView.start(primaryStage);
     }
 }
