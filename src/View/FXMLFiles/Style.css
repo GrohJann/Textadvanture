@@ -1,0 +1,21 @@
+.button{
+    -fx-background-image: url("../../assets/pictures/gui_pics/Button/BtnNormal.png");
+    -fx-background-color: transparent;
+    -fx-text-fill: WHITE;
+    width: 480px;
+    hight: 132px;
+}
+.button:hover {
+    -fx-background-image: url(../../assets/pictures/gui_pics/Button/BtnHover.png);
+    -fx-background-color: transparent;
+    -fx-text-fill: WHITE;
+    width: 480px;
+    hight: 132px;
+}
+.button:pressed {
+    -fx-background-image: url(../../assets/pictures/gui_pics/Button/BtnClicked.png);
+    -fx-background-color: transparent;
+    -fx-text-fill: grey;
+    width: 480px;
+    hight: 132px;
+}
