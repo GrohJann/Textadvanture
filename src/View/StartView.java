@@ -1,21 +1,12 @@
 package View;
 
-import View.FXMLFiles.StartSceneController;
-import javafx.application.Platform;
-import javafx.fxml.FXML;
 import javafx.scene.media.*;
 import java.io.File;
 import javafx.application.Application;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import java.io.IOException;
-import javafx.scene.image.ImageView;
 import javafx.stage.StageStyle;
-
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
-import javafx.stage.Stage;
 
 public class StartView extends Application {
     private Stage primaryStage;
