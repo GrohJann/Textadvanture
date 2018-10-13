@@ -5,7 +5,13 @@ public abstract class Entity {
     private int health;
     private int attack;
     private int armor;
-
+    private int strength;
+    private int Speed;
+    
+    public int getSpeed() { return Speed; }
+    
+    public void setSpeed(int speed) { Speed = speed; }
+    
     public String getName() {
         return name;
     }
@@ -17,7 +23,11 @@ public abstract class Entity {
     public int getHealth() {
         return health;
     }
-
+    
+    public int getStrength() { return strength; }
+    
+    public void setStrength(int strength) { this.strength = strength; }
+    
     public void setHealth(int health) {
         this.health = health;
     }
