@@ -1,21 +1,77 @@
-.button{
+#startBtn {
     -fx-background-image: url("../../assets/pictures/gui_pics/Button/BtnNormal.png");
     -fx-background-color: transparent;
     -fx-text-fill: WHITE;
-    width: 480px;
-    hight: 132px;
+    -fx-pref-width: 480px;
+    -fx-pref-height: 132px;
 }
-.button:hover {
+
+#startBtn:hover {
     -fx-background-image: url(../../assets/pictures/gui_pics/Button/BtnHover.png);
     -fx-background-color: transparent;
     -fx-text-fill: WHITE;
-    width: 480px;
-    hight: 132px;
+    -fx-pref-width: 480px;
+    -fx-pref-height: 132px;
 }
-.button:pressed {
+
+#startBtn:pressed {
     -fx-background-image: url(../../assets/pictures/gui_pics/Button/BtnClicked.png);
     -fx-background-color: transparent;
     -fx-text-fill: grey;
-    width: 480px;
-    hight: 132px;
+    -fx-pref-width: 480px;
+    -fx-pref-height: 132px;
+}
+
+#normBtn {
+    -fx-background-image: url("../../assets/pictures/gui_pics/Button/BtnNormal.png");
+    -fx-background-size: 307px 91px;
+    -fx-background-color: transparent;
+    -fx-text-fill: WHITE;
+    -fx-pref-width: 307px;
+    -fx-pref-height: 91px;
+}
+
+#normBtn:hover {
+    -fx-background-image: url(../../assets/pictures/gui_pics/Button/BtnHover.png);
+    -fx-background-size: 307px 91px;
+    -fx-background-color: transparent;
+    -fx-text-fill: WHITE;
+    -fx-pref-width: 307px;
+    -fx-pref-height: 91px;
+}
+
+#normBtn:pressed {
+    -fx-background-image: url(../../assets/pictures/gui_pics/Button/BtnClicked.png);
+    -fx-background-size: 307px 91px;
+    -fx-background-color: transparent;
+    -fx-text-fill: grey;
+    -fx-pref-width: 307px;
+    -fx-pref-height: 91px;
+}
+
+#exitBtn {
+    -fx-background-image: url(../../assets/pictures/gui_pics/Button/ExitBtnNormal.png);
+    -fx-background-size: 35px;
+    -fx-background-color: transparent;
+    -fx-text-fill: transparent;
+    -fx-pref-width: 35px;
+    -fx-pref-height: 35px;
+}
+
+#exitBtn:hover {
+    -fx-background-image: url(../../assets/pictures/gui_pics/Button/ExitBtnHover.png);
+    -fx-background-size: 35px;
+    -fx-background-color: transparent;
+    -fx-text-fill: transparent;
+    -fx-pref-width: 35px;
+    -fx-pref-height: 35px;
+}
+
+#exitBtn:pressed {
+    -fx-background-image: url(../../assets/pictures/gui_pics/Button/ExitBtnClicked.png);
+    -fx-background-size: 35px;
+    -fx-background-color: transparent;
+    -fx-text-fill: transparent;
+    -fx-pref-width: 35px;
+    -fx-pref-height: 35px;
 }

@@ -2,27 +2,21 @@ package View;
 
 import javafx.scene.media.*;
 import java.io.File;
-import javafx.application.Application;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import java.io.IOException;
 import javafx.stage.StageStyle;
 
-public class StartView extends Application {
+public class StartView {
     private Stage primaryStage;
     private AnchorPane mainLayout;
-    
-    StartView(){
-    }
-    
-    @Override
+
     public void start(Stage primaryStage) throws IOException{
         this.primaryStage = primaryStage;
         this.primaryStage.setTitle("Text Adventure");
-    
         this.primaryStage.initStyle(StageStyle.UNDECORATED);
         
-        View.FXMLLoader.loadFXML("FXMLFiles/startScene.fxml",this.primaryStage, this.mainLayout);
+        FXMLHelper.loadFXML("FXMLFiles/startScene.fxml",this.primaryStage, this.mainLayout);
         playMusic();
         
     }
