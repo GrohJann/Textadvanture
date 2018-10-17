@@ -6,8 +6,8 @@ import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import java.io.IOException;
 
-public class FXMLLoader {
-    public FXMLLoader(){
+public class FXMLHelper {
+    public FXMLHelper(){
 
     }
 

@@ -7,18 +7,14 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="743.0" prefWidth="1317.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="View.FXMLFiles.StartSceneController">
+<AnchorPane fx:id="rootPane" prefHeight="743.0" prefWidth="1317.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="View.FXMLFiles.StartSceneController">
    <children>
-      <AnchorPane prefHeight="743.0" prefWidth="1317.0" style="-fx-background-color: #1c1a17;">
+      <AnchorPane prefHeight="748.0" prefWidth="1330.0" style="-fx-background-color: #1c1a17;">
          <children>
-            <ImageView fitHeight="35.0" fitWidth="33.0" layoutX="1283.0" layoutY="14.0" onMouseClicked="#exit" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../../assets/pictures/gui_pics/icons/exit.png" />
-               </image>
-            </ImageView>
-            <Button layoutX="190.0" layoutY="211.0" mnemonicParsing="false" prefHeight="303.0" prefWidth="468.0" text="next View" />
+            <Button layoutX="190.0" layoutY="211.0" mnemonicParsing="false" onMouseClicked="#showGameView" prefHeight="303.0" prefWidth="468.0" text="next View" />
+            <Button id="exitBtn" layoutX="1279.0" layoutY="14.0" mnemonicParsing="false" onMouseClicked="#exit" stylesheets="@Style.css" text="exit" />
          </children></AnchorPane>
-      <AnchorPane prefHeight="743.0" prefWidth="1317.0" style="-fx-background-color: #1c1a17;" fx:id="startView">
+      <AnchorPane fx:id="startView" prefHeight="743.0" prefWidth="1317.0" style="-fx-background-color: #1c1a17;">
          <children>
             <ImageView fitHeight="748.0" fitWidth="1400.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -26,15 +22,11 @@
                </image>
             </ImageView>
             <ToolBar opacity="0.0" prefHeight="50.0" prefWidth="1277.0" />
-            <ImageView fitHeight="35.0" fitWidth="33.0" layoutX="1283.0" layoutY="14.0" onMouseClicked="#exit" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../../assets/pictures/gui_pics/icons/exit.png" />
-               </image>
-            </ImageView>
-            <Button alignment="CENTER" layoutX="411.0" layoutY="588.0" mnemonicParsing="false" onMouseClicked="#btnClicked" prefHeight="132.0" prefWidth="480.0" stylesheets="@Style.css" text="Start" textFill="WHITE">
+            <Button id="startBtn" alignment="CENTER" layoutX="411.0" layoutY="588.0" mnemonicParsing="false" onMouseClicked="#btnClicked" prefHeight="86.0" prefWidth="480.0" stylesheets="@Style.css" text="Start" textFill="WHITE">
                <font>
-                  <Font name="Serif Bold" size="76.0" />
+                  <Font name="Serif Bold" size="74.0" />
                </font></Button>
+            <Button id="exitBtn" layoutX="1278.0" layoutY="15.0" mnemonicParsing="false" onMouseClicked="#exit" stylesheets="@Style.css" text="exit" />
          </children></AnchorPane>
    </children>
 </AnchorPane>
