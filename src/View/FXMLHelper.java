@@ -18,9 +18,5 @@ public class FXMLHelper {
         Scene scene = new Scene(mainLayout);
         primaryStage.setScene(scene);
         primaryStage.show();
-        
-        
-        StartSceneController controller = new StartSceneController();
-        loader.setController(controller);
     }
 }

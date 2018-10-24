@@ -75,3 +75,39 @@
     -fx-pref-width: 35px;
     -fx-pref-height: 35px;
 }
+
+#assassinBtn {
+    -fx-background-image: url(../../assets/pictures/gui_pics/Avatar/AssassinAvatar.png);
+    -fx-background-size: 150px;
+    -fx-background-color: transparent;
+    -fx-text-fill: transparent;
+    -fx-pref-width: 150px;
+    -fx-pref-height: 150px;
+}
+
+#knightBtn {
+    -fx-background-image: url(../../assets/pictures/gui_pics/Avatar/knightAvatar.png);
+    -fx-background-size: 150px;
+    -fx-background-color: transparent;
+    -fx-text-fill: transparent;
+    -fx-pref-width: 150px;
+    -fx-pref-height: 150px;
+}
+
+#mageBtn {
+    -fx-background-image: url(../../assets/pictures/gui_pics/Avatar/MageAvatar.png);
+    -fx-background-size: 150px;
+    -fx-background-color: transparent;
+    -fx-text-fill: transparent;
+    -fx-pref-width: 150px;
+    -fx-pref-height: 150px;
+}
+
+#orcBtn {
+    -fx-background-image: url(../../assets/pictures/gui_pics/Avatar/OrcAvatar.png);
+    -fx-background-size: 150px;
+    -fx-background-color: transparent;
+    -fx-text-fill: transparent;
+    -fx-pref-width: 150px;
+    -fx-pref-height: 150px;
+}

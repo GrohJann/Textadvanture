@@ -13,17 +13,17 @@ public class StartView {
 
     public void start(Stage primaryStage) throws IOException{
         this.primaryStage = primaryStage;
-        this.primaryStage.setTitle("Text Adventure");
+        this.primaryStage.setTitle("Another Generic Textadventure");
         this.primaryStage.initStyle(StageStyle.UNDECORATED);
-        
+
         FXMLHelper.loadFXML("FXMLFiles/startScene.fxml",this.primaryStage, this.mainLayout);
         playMusic();
-        
+
     }
-    
+
     private void playMusic(){
         String backgroundMusic = "src/assets/sounds/Ambient/Music/Epic_Journey.mp3";
-    
+
         Media sound = new Media(new File(backgroundMusic).toURI().toString());
         MediaPlayer mediaPlayer = new MediaPlayer(sound);
         mediaPlayer.play();
