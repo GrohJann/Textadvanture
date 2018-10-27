@@ -12,4 +12,6 @@ public abstract class PlayerCharacter extends Entity {
     public void setDescription(String description) {
         this.description = description;
     }
+
+
 }
