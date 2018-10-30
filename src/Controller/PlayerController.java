@@ -80,6 +80,7 @@ public class PlayerController  {
       playerCharacter.setArmor(currentArmor + 25);
       playerCharacter.setStrength(currentStrength + 25);
       playerCharacter.setSpeed(currentSpeed + 25);
+      currentLevel = currentLevel +1;
       npc.setLuck(currentLuck + 1);
     }
 
