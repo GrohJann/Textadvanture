@@ -4,9 +4,12 @@ import View.MainView;
 import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
+
+import java.io.File;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -22,12 +25,40 @@ public class GameSceneController implements Initializable {
     private Pane audioPane;
 
     @FXML
-    private ImageView avatar;
+    private ImageView MageAvatar;
+
+    @FXML
+    private ImageView OrcAvatar;
+
+    @FXML
+    private ImageView AssassinAvatar;
+
+    @FXML
+    private ImageView KinghtAvatar;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle){
         options.setVisible(false);
-        //avatar.setImage(mainView.getAvatarPic());
+        if (MainView.getCharacter().equals("orc")) {
+            MageAvatar.setVisible(false);
+            AssassinAvatar.setVisible(false);
+            KinghtAvatar.setVisible(false);
+        }
+        if (MainView.getCharacter().equals("mage")) {
+            OrcAvatar.setVisible(false);
+            AssassinAvatar.setVisible(false);
+            KinghtAvatar.setVisible(false);
+        }
+        if (MainView.getCharacter().equals("assassin")) {
+            MageAvatar.setVisible(false);
+            OrcAvatar.setVisible(false);
+            KinghtAvatar.setVisible(false);
+        }
+        if (MainView.getCharacter().equals("knight")) {
+            MageAvatar.setVisible(false);
+            AssassinAvatar.setVisible(false);
+            OrcAvatar.setVisible(false);
+        }
     }
 
     @FXML
