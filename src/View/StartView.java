@@ -10,7 +10,7 @@ import javafx.stage.StageStyle;
 public class StartView {
     private Stage primaryStage;
     private AnchorPane mainLayout;
-    private MediaPlayer mediaPlayer;
+    private static MediaPlayer mediaPlayer;
     
     /**
      * Method to show the StartView in the PrimaryStage
@@ -34,6 +34,10 @@ public class StartView {
         Media sound = new Media(new File(backgroundMusic).toURI().toString());
         mediaPlayer = new MediaPlayer(sound);
         mediaPlayer.play();
+    }
+    
+    public static void stopMusic(){
+        mediaPlayer.stop();
     }
 }
 

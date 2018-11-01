@@ -1,6 +1,7 @@
 package Controller;
 
 import View.MainView;
+import View.StartView;
 import javafx.application.Application;
 import javafx.stage.Stage;
 
@@ -35,6 +36,7 @@ public class MainController extends Application {
                 if ((int) (Math.random() * 6) + playerController.getStatsInt()[5] >= 5) {
                     enemyController.setEnemyHealth(enemyController.enemyStatsInt()[0] + enemyController.enemyStatsInt()[1] - playerController.getStatsInt()[2] * 5);
                     if (enemyController.enemyStatsInt()[0] > 0) {
+                        MainView.setHealth((double) (((playerController.getStatsInt()[0] + playerController.getStatsInt()[1] - enemyController.enemyStatsInt()[2]) / playerController.getCharacterHealth()) / 100));
                         playerController.setCharacterHealth(playerController.getStatsInt()[0] + playerController.getStatsInt()[1] - enemyController.enemyStatsInt()[2]);
                         if (playerController.getStatsInt()[0] <= 0) {
                             lose();
@@ -47,6 +49,7 @@ public class MainController extends Application {
                 } else {
                     enemyController.setEnemyHealth(enemyController.enemyStatsInt()[0] + enemyController.enemyStatsInt()[1] - playerController.getStatsInt()[2]);
                     if (enemyController.enemyStatsInt()[0] > 0) {
+                        MainView.setHealth((double) (((playerController.getStatsInt()[0] + playerController.getStatsInt()[1] - enemyController.enemyStatsInt()[2]) / playerController.getCharacterHealth()) / 100));
                         playerController.setCharacterHealth(playerController.getStatsInt()[0] + playerController.getStatsInt()[1] - enemyController.enemyStatsInt()[2]);
                         if (playerController.getStatsInt()[0] <= 0) {
                             lose();
@@ -58,6 +61,7 @@ public class MainController extends Application {
                     }
                 }
             } else {
+                MainView.setHealth((double) (((playerController.getStatsInt()[0] + playerController.getStatsInt()[1] - enemyController.enemyStatsInt()[2]) / playerController.getCharacterHealth()) / 100));
                 playerController.setCharacterHealth(playerController.getStatsInt()[0] + playerController.getStatsInt()[1] - enemyController.enemyStatsInt()[2]);
                 if (playerController.getStatsInt()[0] > 0) {
                     if ((Math.random() * 6) + playerController.getStatsInt()[5] >= 5) {

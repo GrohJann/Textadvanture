@@ -1,6 +1,7 @@
 package View.FXMLFiles;
 
 import View.MainView;
+import View.StartView;
 import javafx.fxml.FXML;
 import javafx.application.Platform;
 import javafx.fxml.FXMLLoader;
@@ -39,6 +40,7 @@ public class StartSceneController {
     @FXML
     public void showGameView(MouseEvent event) {
         System.out.println("change to GameView");
+        StartView.stopMusic();
         Button btn = (Button) event.getSource();
         System.out.println("source: "+ btn);
         String id = btn.getId();

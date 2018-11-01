@@ -53,7 +53,7 @@ public class GameSceneController implements Initializable {
     private Pane KnightOptions;
     
     @FXML
-    private ProgressBar health;
+    private static ProgressBar healthBar;
     
     @FXML
     private CheckBox musicBtn;
@@ -156,5 +156,9 @@ public class GameSceneController implements Initializable {
         } else {
             GameView.stopMusic();
         }
+    }
+    
+    public static void setHealth(double health){
+        healthBar.setProgress(health);
     }
 }

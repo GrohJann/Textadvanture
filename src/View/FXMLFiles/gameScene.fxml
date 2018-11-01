@@ -43,7 +43,7 @@
                         <Image url="@../../assets/pictures/gui_pics/Avatar/KnightAvatar.png" />
                      </image>
                   </ImageView>
-                  <ProgressBar id="health" fx:id="health" layoutX="207.0" layoutY="55.0" prefHeight="58.0" prefWidth="231.0" progress="1.0" stylesheets="@Style.css" />
+                  <ProgressBar id="health" fx:id="healthBar" layoutX="207.0" layoutY="55.0" prefHeight="58.0" prefWidth="231.0" progress="1.0" stylesheets="@Style.css" />
                </children>
             </AnchorPane>
             <Button id="exitBtn" layoutX="1266.0" layoutY="12.0" mnemonicParsing="false" onMouseClicked="#exit" prefHeight="35.0" prefWidth="106.0" stylesheets="@Style.css" text="exit" />
