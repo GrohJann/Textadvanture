@@ -1,7 +1,5 @@
 package View.FXMLFiles;
 
-import Controller.MainController;
-import View.GameView;
 import View.MainView;
 import javafx.fxml.FXML;
 import javafx.application.Platform;
@@ -19,13 +17,12 @@ public class StartSceneController {
     private AnchorPane startView;
     @FXML
     private AnchorPane rootPane;
-
-
+    
+    
     @FXML
     public void btnClicked() {
         System.out.println("Button clicked");
         startView.setVisible(false);
-
     }
 
     @FXML
@@ -33,7 +30,12 @@ public class StartSceneController {
         System.out.println("Exit Button clicked");
         Platform.exit();
     }
-
+    
+    /**
+     * sets the chosen character as chosen
+     * loads GameView into the PrimaryStage
+     * @param event MouseClick
+     */
     @FXML
     public void showGameView(MouseEvent event) {
         System.out.println("change to GameView");
@@ -43,19 +45,19 @@ public class StartSceneController {
 
         if (id.equals("orcBtn")) {
             System.out.println("set orc");
-            //mainView.setCharacter("orc");
+            mainView.setCharacter("orc");
         }
         if (id.equals("mageBtn")) {
             System.out.println("set mage");
-            //mainView.setCharacter("mage");
+            mainView.setCharacter("mage");
         }
         if (id.equals("assassinBtn")) {
             System.out.println("set assassin");
-            //mainView.setCharacter("assassin");
+            mainView.setCharacter("assassin");
         }
         if (id.equals("knightBtn")) {
             System.out.println("set knight");
-            //mainView.setCharacter("knight");
+            mainView.setCharacter("knight");
         }
 
         try {

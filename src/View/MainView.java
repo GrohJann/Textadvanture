@@ -6,25 +6,45 @@ import javafx.stage.Stage;
 public class MainView {
     private Stage primaryStage;
     private StartView startView;
-    private MainController mainController = new MainController();
     
     public MainView() {
         startView = new StartView();
     }
-
+    
+    /**
+     * Starts showing the StartView
+     * @param primaryStage Stage for showing the View (similar to JFrame in Java.swing)
+     * @throws Exception shows error when something is wrong inside the View
+     */
     public void start(Stage primaryStage) throws Exception{
         primaryStage.setResizable(false);
         startView.start(primaryStage);
         this.primaryStage = primaryStage;
     }
-
-    public void setCharacter(String character){
+    
+    public static void fight(){
+        MainController.fight();
+    }
+    
+    public static void flee(){
+        MainController.flee();
+    }
+    
+    
+    /**
+     * Getter and Setter Methods
+     */
+    public static void setCharacter(String character){
         if (character.equals("orc") | character.equals("mage") | character.equals("knight") | character.equals("assassin")) {
-            mainController.setCharcter(character);
+            MainController.setCharacter(character);
         } else {
-            mainController.setCharcter(null);
+            MainController.setCharacter(null);
         }
     }
-
-    //public void setCharacter(String character) {mainController.setCharacter(character);}
+    
+    /**
+     * returns the chosen character
+     * @return chosen character
+     */
+    public static String getCharacter() {return MainController.getCharacter();}
 }

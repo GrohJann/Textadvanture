@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.control.Slider?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -20,30 +23,41 @@
             </ImageView>
             <AnchorPane id="avatar" prefHeight="139.0" prefWidth="371.0">
                <children>
-                  <ImageView fx:id="avatar" fitHeight="184.0" fitWidth="689.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="AssassinAvatar" fitHeight="184.0" fitWidth="482.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../../assets/pictures/gui_pics/Avatar/AvatarEmpty.png" />
                      </image>
                   </ImageView>
+                  <ImageView fx:id="OrcAvatar" fitHeight="184.0" fitWidth="477.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../assets/pictures/gui_pics/Avatar/AvatarEmpty.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="MageAvatar" fitHeight="184.0" fitWidth="477.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../assets/pictures/gui_pics/Avatar/MageAvatar.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="KinghtAvatar" fitHeight="184.0" fitWidth="477.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../assets/pictures/gui_pics/Avatar/KnightAvatar.png" />
+                     </image>
+                  </ImageView>
+                  <ProgressBar id="health" fx:id="health" layoutX="207.0" layoutY="55.0" prefHeight="58.0" prefWidth="231.0" progress="1.0" stylesheets="@Style.css" />
                </children>
             </AnchorPane>
-            <Button id="exitBtn" layoutX="1280.0" layoutY="14.0" mnemonicParsing="false" onMouseClicked="#exit" prefHeight="35.0" prefWidth="106.0" stylesheets="@Style.css" text="exit" />
-            <Button id="normBtn" layoutX="96.0" layoutY="648.0" mnemonicParsing="false" prefHeight="91.0" prefWidth="307.0" stylesheets="@Style.css" text="Flee" textFill="WHITE">
+            <Button id="exitBtn" layoutX="1266.0" layoutY="12.0" mnemonicParsing="false" onMouseClicked="#exit" prefHeight="35.0" prefWidth="106.0" stylesheets="@Style.css" text="exit" />
+            <Button id="normBtn" layoutX="239.0" layoutY="648.0" mnemonicParsing="false" onMouseClicked="#fleePressed" prefHeight="91.0" prefWidth="307.0" stylesheets="@Style.css" text="Flee" textFill="WHITE">
                <font>
                   <Font name="Serif Bold" size="44.0" />
                </font>
             </Button>
-            <Button id="normBtn" layoutX="547.0" layoutY="648.0" mnemonicParsing="false" prefHeight="91.0" prefWidth="307.0" stylesheets="@Style.css" text="Hide" textFill="WHITE">
+            <Button id="normBtn" layoutX="883.0" layoutY="648.0" mnemonicParsing="false" onMouseClicked="#fightPressed" prefHeight="91.0" prefWidth="307.0" stylesheets="@Style.css" text="Fight" textFill="WHITE">
                <font>
                   <Font name="Serif Bold" size="44.0" />
                </font>
             </Button>
-            <Button id="normBtn" layoutX="993.0" layoutY="648.0" mnemonicParsing="false" prefHeight="91.0" prefWidth="307.0" stylesheets="@Style.css" text="Fight" textFill="WHITE">
-               <font>
-                  <Font name="Serif Bold" size="44.0" />
-               </font>
-            </Button>
-            <ImageView fitHeight="43.0" fitWidth="50.0" layoutX="1224.0" layoutY="8.0" onMouseClicked="#openOptions" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="43.0" fitWidth="50.0" layoutX="1217.0" layoutY="8.0" onMouseClicked="#openOptions" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../assets/pictures/gui_pics/icons/Options.png" />
                </image>
@@ -52,7 +66,7 @@
       <AnchorPane fx:id="options" prefHeight="788.0" prefWidth="1400.0">
          <children>
             <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#0d0d0dc7" height="787.0" stroke="BLACK" strokeType="INSIDE" width="1400.0" />
-            <Pane fx:id="audioPane" layoutX="479.0" layoutY="52.0" prefHeight="696.0" prefWidth="609.0">
+            <Pane fx:id="audioPane" layoutX="483.0" layoutY="42.0" prefHeight="705.0" prefWidth="609.0">
                <children>
                   <ImageView fitHeight="705.0" fitWidth="463.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -99,9 +113,15 @@
                         <Image url="@../../assets/pictures/gui_pics/Button/ExitBtnNormal.png" />
                      </image>
                   </ImageView>
+                  <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
+                  <Slider layoutX="36.0" layoutY="178.0" prefHeight="14.0" prefWidth="377.0" value="50.0" />
+                  <CheckBox id="checkBox" fx:id="musicBtn" layoutX="64.0" layoutY="208.0" mnemonicParsing="false" onMouseClicked="#music" prefHeight="58.0" prefWidth="172.0" selected="true" stylesheets="@Style.css" text="Music" textFill="WHITE">
+                     <font>
+                        <Font name="Serif Bold" size="20.0" />
+                     </font></CheckBox>
                </children>
             </Pane>
-            <Pane fx:id="characterPane" layoutX="479.0" layoutY="52.0" prefHeight="696.0" prefWidth="609.0">
+            <Pane fx:id="characterPane" layoutX="483.0" layoutY="42.0" prefHeight="705.0" prefWidth="609.0">
                <children>
                   <ImageView fitHeight="705.0" fitWidth="463.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -148,6 +168,62 @@
                         <Image url="@../../assets/pictures/gui_pics/Button/ExitBtnNormal.png" />
                      </image>
                   </ImageView>
+                  <Pane fx:id="AssassinOptions" layoutX="14.0" layoutY="115.0" prefHeight="579.0" prefWidth="425.0">
+                     <children>
+                        <Label alignment="TOP_LEFT" layoutX="16.0" layoutY="139.0" prefHeight="365.0" prefWidth="394.0" text="An Assassin is a nimble and quiet class, moving in darkness to strike at the unsuspecting. Locks hold no doors shut for them. Assassins are very adept at taking the lives of others, and are able to find the weak points of opponents, often able to fell those much more powerful than themselves. Because of their training, assassins are typically adept at using a wide variety of weapons; however, to maintain their stealthy cloak, assassins typically stick with light armor and rarely carry shields. Most assassins work outside of the law. However, some factions such as the Morag Tong and the Shadowscales are assassins for their ruler." textFill="WHITE" wrapText="true">
+                           <font>
+                              <Font name="Serif Bold" size="19.0" />
+                           </font>
+                        </Label>
+                        <ImageView fitHeight="122.0" fitWidth="128.0" layoutX="14.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../assets/pictures/gui_pics/Avatar/AssassinBtn.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </Pane>
+                  <Pane fx:id="OrcOptions" layoutX="14.0" layoutY="115.0" prefHeight="579.0" prefWidth="425.0">
+                     <children>
+                        <Label alignment="TOP_LEFT" layoutX="16.0" layoutY="139.0" prefHeight="365.0" prefWidth="394.0" text="The BigBoi (more commonly known as MeMeBIIIGBOI), is native to the Wrothgarian and Dragontail Mountains. He is possibly a variant of elves or mer. Other sources state he is fron the beastfolk. Following in the footsteps of Trinimac, and subsequently Malacath, BigBoi has consistently held a standard  as one of Tamriel's greatest warriors and smiths. His catchphrase is:'Me Me BIIIIIIG BOI!" textFill="WHITE" wrapText="true">
+                           <font>
+                              <Font name="Serif Bold" size="19.0" />
+                           </font>
+                        </Label>
+                        <ImageView fitHeight="122.0" fitWidth="128.0" layoutX="14.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../assets/pictures/gui_pics/Avatar/OrcBtn.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </Pane>
+                  <Pane fx:id="KnightOptions" layoutX="14.0" layoutY="117.0" prefHeight="579.0" prefWidth="425.0">
+                     <children>
+                        <Label alignment="TOP_LEFT" layoutX="16.0" layoutY="139.0" prefHeight="365.0" prefWidth="394.0" text="The Knight is the most noble of all combatants. Knights are strong in body and in character, are well schooled in the art of chivalry, and conduct themselves with honor and dignity. Knights are adept at the utilization of all weapons, can wear many types of armor, and typically utilize shields. Knights are also adept at armor and weapons repair, and in some instances have an immunity to paralysis primarily due to their strong moral character." textFill="WHITE" wrapText="true">
+                           <font>
+                              <Font name="Serif Bold" size="19.0" />
+                           </font>
+                        </Label>
+                        <ImageView fitHeight="122.0" fitWidth="128.0" layoutX="14.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../assets/pictures/gui_pics/Avatar/knightBtn.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </Pane>
+                  <Pane fx:id="MageOptions" layoutX="13.0" layoutY="116.0" prefHeight="579.0" prefWidth="425.0">
+                     <children>
+                        <Label alignment="TOP_LEFT" layoutX="16.0" layoutY="139.0" prefHeight="365.0" prefWidth="394.0" text="Mages use their extensive knowledge and lore of magicka in every way which will help them to solve any given problem. Though most Mages tend to specialize into one school of magic it is not uncommon for a Mage to have significant skill in all schools of magic including the art of alchemy.Mages use their extensive knowledge and lore of magicka in every way which will help them to solve any given problem. Though most Mages tend to specialize into one school of magic it is not uncommon for a Mage to have significant skill in all schools of magic including the art of alchemy." textFill="WHITE" wrapText="true">
+                           <font>
+                              <Font name="Serif Bold" size="19.0" />
+                           </font>
+                        </Label>
+                        <ImageView fitHeight="122.0" fitWidth="128.0" layoutX="14.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../assets/pictures/gui_pics/Avatar/MageBtn.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </Pane>
                </children>
             </Pane>
          </children>
