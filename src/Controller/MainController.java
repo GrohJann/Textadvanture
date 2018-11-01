@@ -6,7 +6,7 @@ import javafx.stage.Stage;
 
 public class MainController extends Application {
 
-    //Klasse
+
 
     private MainView mainView;
     private String character;
