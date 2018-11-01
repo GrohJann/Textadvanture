@@ -12,6 +12,8 @@ public class PlayerController {
     private NPC npc;
     private int currentLevel;
     private String character;
+    private int playerChosen;
+    private int maxHealth;
     
     
     public PlayerController(int playerLevel) {
@@ -26,6 +28,7 @@ public class PlayerController {
         this.npc = new NPC();
         npc.setLuck(4);
         character = "assassin";
+        playerChosen = 1;
     }
 
     /**
@@ -37,6 +40,7 @@ public class PlayerController {
         this.npc = new NPC();
         npc.setLuck(1);
         character = "knight";
+        playerChosen = 2;
     }
 
     /**
@@ -48,6 +52,7 @@ public class PlayerController {
         this.npc = new NPC();
         npc.setLuck(1);
         character = "mage";
+        playerChosen = 3;
     }
 
     /**
@@ -59,6 +64,7 @@ public class PlayerController {
         this.npc = new NPC();
         npc.setLuck(1);
         character = "orc";
+        playerChosen = 4;
     }
 
     /**
@@ -104,7 +110,7 @@ public class PlayerController {
     }
     
     public int[] getStatsInt() {
-        int[] playerStats = new int[6];
+        int[] playerStats = new int[7];
         
         
         playerStats[0] = playerCharacter.getHealth();
@@ -113,6 +119,27 @@ public class PlayerController {
         playerStats[3] = playerCharacter.getSpeed();
         playerStats[4] = currentLevel;
         playerStats[5] = npc.getLuck();
+        if(playerChosen == 1){
+            maxHealth = 75 + 25 * currentLevel;
+            playerStats[6] = maxHealth;
+        }
+        if(playerChosen == 2){
+            maxHealth = 75 + 25 * currentLevel + 50;
+            playerStats[6] = maxHealth;
+        }
+        if(playerChosen == 1){
+            maxHealth = 75 + 25 * currentLevel + 50;
+            playerStats[6] = maxHealth;
+        }
+        if(playerChosen == 3){
+            maxHealth = 50 + 25 * currentLevel + 50;
+            playerStats[6] = maxHealth;
+        }
+        if(playerChosen == 4){
+            maxHealth = 100 + 25 * currentLevel + 50;
+            playerStats[6] = maxHealth;
+        }
+
         
         return playerStats;
     }
@@ -127,10 +154,6 @@ public class PlayerController {
     
     public String getCharacter() {
         return character;
-    }
-    
-    public int getCharacterHealth() {
-        return playerCharacter.getHealth();
     }
     
 }
