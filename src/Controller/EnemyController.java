@@ -4,6 +4,8 @@ import Model.Enemy.*;
 
 public class EnemyController {
 
+    //Klasse
+
     private Enemy enemy;
 
     public EnemyController(){

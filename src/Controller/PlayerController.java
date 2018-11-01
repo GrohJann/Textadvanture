@@ -5,6 +5,8 @@ import Model.player_character.*;
 
 
 public class PlayerController {
+
+    //Klasse
     
     private PlayerCharacter playerCharacter;
     private NPC npc;

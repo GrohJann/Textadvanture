@@ -5,6 +5,9 @@ import javafx.application.Application;
 import javafx.stage.Stage;
 
 public class MainController extends Application {
+
+    //Klasse
+
     private MainView mainView;
     private String character;
     private static EnemyController enemyController = new EnemyController();
