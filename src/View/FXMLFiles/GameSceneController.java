@@ -161,7 +161,7 @@ public class GameSceneController implements Initializable {
     @FXML
     public void fleePressed(){
         System.out.println("Flee Button clicked");
-        MainController.flee();
+        MainView.flee();
     }
     
     @FXML
