@@ -46,7 +46,7 @@ public class EnemyController {
             enemy = new GoblinArcher(playerLevel);
         }
         if(enemyTypeToChoose == 4){
-            enemy = new Revenant(playerLevel);
+            enemy = new ElderLitchy(playerLevel);
         }
     }
 

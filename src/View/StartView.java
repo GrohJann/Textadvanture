@@ -10,7 +10,11 @@ import javafx.stage.StageStyle;
 public class StartView {
     private Stage primaryStage;
     private AnchorPane mainLayout;
-
+    private MediaPlayer mediaPlayer;
+    
+    /**
+     * Method to show the StartView in the PrimaryStage
+     */
     public void start(Stage primaryStage) throws IOException{
         this.primaryStage = primaryStage;
         this.primaryStage.setTitle("Another Generic Textadventure");
@@ -20,12 +24,15 @@ public class StartView {
         playMusic();
 
     }
-
+    
+    /**
+     * plays the background music
+     */
     private void playMusic(){
         String backgroundMusic = "src/assets/sounds/Ambient/Music/Epic_Journey.mp3";
 
         Media sound = new Media(new File(backgroundMusic).toURI().toString());
-        MediaPlayer mediaPlayer = new MediaPlayer(sound);
+        mediaPlayer = new MediaPlayer(sound);
         mediaPlayer.play();
     }
 }

@@ -77,7 +77,7 @@
 }
 
 #assassinBtn {
-    -fx-background-image: url(../../assets/pictures/gui_pics/Avatar/AssassinAvatar.png);
+    -fx-background-image: url(../../assets/pictures/gui_pics/Avatar/AssassinBtn.png);
     -fx-background-size: 150px;
     -fx-background-color: transparent;
     -fx-text-fill: transparent;
@@ -86,7 +86,7 @@
 }
 
 #knightBtn {
-    -fx-background-image: url(../../assets/pictures/gui_pics/Avatar/knightAvatar.png);
+    -fx-background-image: url(../../assets/pictures/gui_pics/Avatar/knightBtn.png);
     -fx-background-size: 150px;
     -fx-background-color: transparent;
     -fx-text-fill: transparent;
@@ -95,7 +95,7 @@
 }
 
 #mageBtn {
-    -fx-background-image: url(../../assets/pictures/gui_pics/Avatar/MageAvatar.png);
+    -fx-background-image: url(../../assets/pictures/gui_pics/Avatar/MageBtn.png);
     -fx-background-size: 150px;
     -fx-background-color: transparent;
     -fx-text-fill: transparent;
@@ -104,10 +104,65 @@
 }
 
 #orcBtn {
-    -fx-background-image: url(../../assets/pictures/gui_pics/Avatar/OrcAvatar.png);
+    -fx-background-image: url(../../assets/pictures/gui_pics/Avatar/OrcBtn.png);
     -fx-background-size: 150px;
     -fx-background-color: transparent;
     -fx-text-fill: transparent;
     -fx-pref-width: 150px;
     -fx-pref-height: 150px;
+}
+
+.check-box .box {
+     -fx-background-image: url(../../assets/pictures/gui_pics/checkbtn/box.png);
+     -fx-background-size: 57px 54px;
+     -fx-background-color: transparent;
+     -fx-pref-width: 57px;
+     -fx-pref-height: 54px;
+ }
+
+.check-box .mark {
+    -fx-background-image: url(../../assets/pictures/gui_pics/checkbtn/norm2.png);
+    -fx-shape: "M0,0L30,0L30,28L0,28L0,0";
+    -fx-background-size: 57px 54px;
+    -fx-background-color: transparent;
+    -fx-pref-width: 57px;
+    -fx-pref-height: 54px;
+}
+
+.check-box:hover .mark {
+    -fx-background-image: url(../../assets/pictures/gui_pics/checkbtn/hover2.png);
+    -fx-shape: "M0,0L30,0L30,28L0,28L0,0";
+    -fx-background-size: 57px 54px;
+    -fx-background-color: transparent;
+    -fx-pref-width: 57px;
+    -fx-pref-height: 54px;
+}
+
+.check-box:pressed .mark {
+    -fx-background-image: url(../../assets/pictures/gui_pics/checkbtn/pressed2.png);
+    -fx-shape: "M0,0L30,0L30,28L0,28L0,0";
+    -fx-background-size: 57px 54px;
+    -fx-background-color: transparent;
+    -fx-pref-width: 57px;
+    -fx-pref-height: 54px;
+}
+
+.check-box:selected .mark {
+    -fx-background-image: url(../../assets/pictures/gui_pics/checkbtn/selected2.png);
+    -fx-shape: "M0,0L30,0L30,28L0,28L0,0";
+    -fx-background-size: 57px 54px;
+    -fx-background-color: transparent;
+    -fx-pref-width: 57px;
+    -fx-pref-height: 54px;
+}
+
+.progress-bar > .track {
+    -fx-text-box-border: transparent;
+    -fx-control-inner-background: transparent;
+    -fx-background-color: transparent;
+}
+
+#health > .bar {
+    -fx-background-image: url(../../assets/pictures/gui_pics/Avatar/heathBar4.png);
+    -fx-background-color: transparent;
 }

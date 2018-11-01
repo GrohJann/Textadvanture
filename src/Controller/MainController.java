@@ -6,31 +6,33 @@ import javafx.stage.Stage;
 
 public class MainController extends Application {
     private MainView mainView;
-    private String charcter;
-    private EnemyController enemyController;
-    private PlayerController playerController;
+    private String character;
+    private static EnemyController enemyController = new EnemyController();
+
+    private static PlayerController playerController = new PlayerController(1);
 
     public static void main(String[] args) {
         launch(args);
     }
-
+    
+    /**
+     * Start Method for showing the View
+     * @param primaryStage Stage for showing the View (similar to JFrame in Java.swing)
+     * @throws Exception shows error when something is wrong inside the View
+     */
     @Override
     public void start(Stage primaryStage) throws Exception {
-        playerController = new PlayerController(1);
-        enemyController= new EnemyController();
         mainView = new MainView();
         mainView.start(primaryStage);
     }
-
-
+    
     /**
-     * Getter and Setter Methods
+     * Fight Method
      */
-
-    public void fight() {
+    public static void fight() {
         if (playerController.getStatsInt()[0] > 0 && enemyController.enemyStatsInt()[0] > 0) {
             if (playerController.getStatsInt()[3] >= enemyController.enemyStatsInt()[3]) {
-                if ((Math.random() * 6) + playerController.getStatsInt()[5] >= 5) {
+                if ((int) (Math.random() * 6) + playerController.getStatsInt()[5] >= 5) {
                     enemyController.setEnemyHealth(enemyController.enemyStatsInt()[0] + enemyController.enemyStatsInt()[1] - playerController.getStatsInt()[2] * 5);
                     if (enemyController.enemyStatsInt()[0] > 0) {
                         playerController.setCharacterHealth(playerController.getStatsInt()[0] + playerController.getStatsInt()[1] - enemyController.enemyStatsInt()[2]);
@@ -40,6 +42,7 @@ public class MainController extends Application {
                     } else {
                         playerController.increasePlayerSats();
                         enemyController.generateNewEnemy(playerController.getCurrentLevel());
+                        System.out.println("next enemy created");
                     }
                 } else {
                     enemyController.setEnemyHealth(enemyController.enemyStatsInt()[0] + enemyController.enemyStatsInt()[1] - playerController.getStatsInt()[2]);
@@ -51,6 +54,7 @@ public class MainController extends Application {
                     } else {
                         playerController.increasePlayerSats();
                         enemyController.generateNewEnemy(playerController.getCurrentLevel());
+                        System.out.println("next enemy created");
                     }
                 }
             } else {
@@ -61,54 +65,69 @@ public class MainController extends Application {
                         if (enemyController.enemyStatsInt()[0] <= 0) {
                             playerController.increasePlayerSats();
                             enemyController.generateNewEnemy(playerController.getCurrentLevel());
+                            System.out.println("next enemy created");
                         }
                     } else {
                         enemyController.setEnemyHealth(enemyController.enemyStatsInt()[0] + enemyController.enemyStatsInt()[1] - playerController.getStatsInt()[2]);
                         if (enemyController.enemyStatsInt()[0] <= 0) {
                             playerController.increasePlayerSats();
                             enemyController.generateNewEnemy(playerController.getCurrentLevel());
+                            System.out.println("next enemy created");
                         }
                     }
                 } else {
                     lose();
                 }
-
+                
             }
-        fight();}
+            fight();
+            System.out.println("Another fight round");
+        }
     }
-
-
-    public void setCharcter(String charcter) {
-        this.charcter = charcter;
-    }
-
-    public void flee() {
+    
+    /**
+     * Method that runs after the flee button is pressed
+     */
+    public static void flee() {
         int fleeNumber = (int) Math.random() * 6;
         if (fleeNumber >= 5) {
             playerController.healThroughFlee();
             enemyController.generateNewEnemy(playerController.getCurrentLevel());
         }
     }
-
-    public String getCharcterPic() {
-        return charcter;
+    
+    /**
+     * Method that runs when the player losses (when playerHealth <= 0)
+     */
+    public static void lose(){
+    
     }
-
-
-    public void update() {
-        playerController.correctPlayerHealth();
-        enemyController.correctEnemyHealth();
-        if(enemyController.enemyStatsString()[0].equals("0")){
-         enemyController.generateNewEnemy(playerController.getCurrentLevel());
+    
+    
+    
+    /**
+     * Getter and Setter Methods
+     */
+    public static void setCharacter(String character) {
+        if (character.equals("orc")){
+            playerController.createPlayerMeMeBIIIGBOI();
         }
-        if(playerController.getStatsString()[1].equals(("0"))){
-            lose();
+        if (character.equals("mage")){
+            playerController.createPlayerMage();
         }
-
+        if (character.equals("assassin")){
+            playerController.createPlayerAssasin();
+        }
+        if (character.equals("knight")){
+            playerController.createPlayerKnight();
+        }
+        enemyController.generateNewEnemy(playerController.getCurrentLevel());
+        System.out.println("First Enemy created");
+    }
+    
+    public static String getCharacter(){
+        return playerController.getCharacter();
     }
 
-    public void lose(){
-
-    }
 }
 
