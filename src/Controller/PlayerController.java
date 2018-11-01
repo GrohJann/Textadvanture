@@ -129,4 +129,8 @@ public class PlayerController {
         return character;
     }
     
+    public int getCharacterHealth() {
+        return playerCharacter.getHealth();
+    }
+    
 }

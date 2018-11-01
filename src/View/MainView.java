@@ -1,6 +1,7 @@
 package View;
 
 import Controller.MainController;
+import View.FXMLFiles.GameSceneController;
 import javafx.stage.Stage;
 
 public class MainView {
@@ -47,4 +48,8 @@ public class MainView {
      * @return chosen character
      */
     public static String getCharacter() {return MainController.getCharacter();}
+    
+    public static void setHealth(double health){
+        GameSceneController.setHealth(health);
+    }
 }

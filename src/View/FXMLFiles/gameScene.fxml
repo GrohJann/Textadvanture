@@ -43,7 +43,7 @@
                         <Image url="@../../assets/pictures/gui_pics/Avatar/KnightAvatar.png" />
                      </image>
                   </ImageView>
-                  <ProgressBar id="health" fx:id="health" layoutX="207.0" layoutY="55.0" prefHeight="58.0" prefWidth="231.0" progress="1.0" stylesheets="@Style.css" />
+                  <ProgressBar id="health" fx:id="healthBar" layoutX="207.0" layoutY="55.0" prefHeight="58.0" prefWidth="231.0" progress="1.0" stylesheets="@Style.css" />
                </children>
             </AnchorPane>
             <Button id="exitBtn" layoutX="1266.0" layoutY="12.0" mnemonicParsing="false" onMouseClicked="#exit" prefHeight="35.0" prefWidth="106.0" stylesheets="@Style.css" text="exit" />
@@ -114,7 +114,7 @@
                      </image>
                   </ImageView>
                   <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
-                  <Slider layoutX="36.0" layoutY="178.0" prefHeight="14.0" prefWidth="377.0" value="50.0" />
+                  <Slider fx:id="volume" layoutX="36.0" layoutY="178.0" onMouseMoved="#setVolume" prefHeight="14.0" prefWidth="377.0" value="50.0" />
                   <CheckBox id="checkBox" fx:id="musicBtn" layoutX="64.0" layoutY="208.0" mnemonicParsing="false" onMouseClicked="#music" prefHeight="58.0" prefWidth="172.0" selected="true" stylesheets="@Style.css" text="Music" textFill="WHITE">
                      <font>
                         <Font name="Serif Bold" size="20.0" />

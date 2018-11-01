@@ -23,11 +23,11 @@ public class GameView {
      */
     public static void playRandomMusic() {
         System.out.println("start playing music");
-        int songNo = (int) Math.random() * 5 + 1;
+        int songNo = (int) (Math.random() * 5 + 1);
         
         switch (songNo) {
             case 1:
-                music = "src/assets/sounds/Ambient/Music/All_ThisScoring_Action.mp3";
+                music = "src/assets/sounds/Ambient/Music/All_This_Scoring_Action.mp3";
                 break;
             case 2:
                 music = "src/assets/sounds/Ambient/Music/Arcadia_Wonders.mp3";
@@ -43,8 +43,12 @@ public class GameView {
                 break;
         }
         
-        mediaPlayer = new MediaPlayer(new Media(new File("src/assets/sounds/Ambient/Music/All_This_Scoring_Action.mp3").toURI().toString()));
+        mediaPlayer = new MediaPlayer(new Media(new File(music).toURI().toString()));
         mediaPlayer.play();
+        
+        if (mediaPlayer.getStatus().equals(MediaPlayer.Status.STOPPED)) {
+            playRandomMusic();
+        }
     }
     
     /**
@@ -53,6 +57,13 @@ public class GameView {
     public static void stopMusic(){
         System.out.println("stop playing music");
         mediaPlayer.stop();
+    }
+    
+    /**
+     * set the volume of the music player
+     */
+    public static void setVolume(double volume){
+        mediaPlayer.setVolume(volume/100);
     }
     
     

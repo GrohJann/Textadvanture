@@ -8,6 +8,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.ProgressBar;
+import javafx.scene.control.Slider;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
@@ -53,10 +54,13 @@ public class GameSceneController implements Initializable {
     private Pane KnightOptions;
     
     @FXML
-    private ProgressBar health;
+    private static ProgressBar healthBar;
     
     @FXML
     private CheckBox musicBtn;
+    
+    @FXML
+    private Slider volume;
     
     /**
      *this Method runs directly after/while loading the affiliated View
@@ -156,5 +160,14 @@ public class GameSceneController implements Initializable {
         } else {
             GameView.stopMusic();
         }
+    }
+    
+    @FXML
+    public void setVolume(){
+        GameView.setVolume(volume.getValue());
+    }
+    
+    public static void setHealth(double health){
+        healthBar.setProgress(health);
     }
 }

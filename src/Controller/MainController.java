@@ -1,6 +1,7 @@
 package Controller;
 
 import View.MainView;
+import View.StartView;
 import javafx.application.Application;
 import javafx.stage.Stage;
 
@@ -39,6 +40,7 @@ public class MainController extends Application {
                     enemyController.setEnemyHealth(enemyController.enemyStatsInt()[0] + enemyController.enemyStatsInt()[1] - playerController.getStatsInt()[2] * 5);
                     System.out.println(enemyController.enemyStatsInt()[0]);
                     if (enemyController.enemyStatsInt()[0] > 0) {
+                        MainView.setHealth((double) (((playerController.getStatsInt()[0] + playerController.getStatsInt()[1] - enemyController.enemyStatsInt()[2]) / playerController.getCharacterHealth()) / 100));
                         playerController.setCharacterHealth(playerController.getStatsInt()[0] + playerController.getStatsInt()[1] - enemyController.enemyStatsInt()[2]);
                         System.out.println(playerController.getStatsInt()[0]);
                         if (playerController.getStatsInt()[0] <= 0) {
@@ -53,6 +55,7 @@ public class MainController extends Application {
                     enemyController.setEnemyHealth(enemyController.enemyStatsInt()[0] + enemyController.enemyStatsInt()[1] - playerController.getStatsInt()[2]);
                     System.out.println(enemyController.enemyStatsInt()[0]);
                     if (enemyController.enemyStatsInt()[0] > 0) {
+                        MainView.setHealth((double) (((playerController.getStatsInt()[0] + playerController.getStatsInt()[1] - enemyController.enemyStatsInt()[2]) / playerController.getCharacterHealth()) / 100));
                         playerController.setCharacterHealth(playerController.getStatsInt()[0] + playerController.getStatsInt()[1] - enemyController.enemyStatsInt()[2]);
                         System.out.println(playerController.getStatsInt()[0]);
                         if (playerController.getStatsInt()[0] <= 0) {
@@ -65,6 +68,7 @@ public class MainController extends Application {
                     }
                 }
             } else {
+                MainView.setHealth((double) (((playerController.getStatsInt()[0] + playerController.getStatsInt()[1] - enemyController.enemyStatsInt()[2]) / playerController.getCharacterHealth()) / 100));
                 playerController.setCharacterHealth(playerController.getStatsInt()[0] + playerController.getStatsInt()[1] - enemyController.enemyStatsInt()[2]);
                 System.out.println(playerController.getStatsInt()[0]);
                 if (playerController.getStatsInt()[0] > 0) {
