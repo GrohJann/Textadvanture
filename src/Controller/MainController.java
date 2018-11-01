@@ -1,7 +1,6 @@
 package Controller;
 
 import View.MainView;
-import View.StartView;
 import javafx.application.Application;
 import javafx.stage.Stage;
 
@@ -101,10 +100,16 @@ public class MainController extends Application {
      * Method that runs after the flee button is pressed
      */
     public static void flee() {
-        int fleeNumber = (int) Math.random() * 6;
-        if (fleeNumber >= 5) {
-            playerController.healThroughFlee();
-            enemyController.generateNewEnemy(playerController.getCurrentLevel());
+        if (playerController.getStatsInt()[0] > 0 && enemyController.enemyStatsInt()[0] > 0) {
+            int fleeNumber = (int) (Math.random() * 6) + playerController.getStatsInt()[5];
+            if (fleeNumber >= 5) {
+                playerController.healThroughFlee();
+                enemyController.generateNewEnemy(playerController.getCurrentLevel());
+                System.out.println(playerController.getStatsInt()[0]);
+            } else {
+                playerController.setCharacterHealth(playerController.getStatsInt()[0] + playerController.getStatsInt()[1] - enemyController.enemyStatsInt()[2]);
+                System.out.println(playerController.getStatsInt()[0]);
+            }
         }
     }
     
