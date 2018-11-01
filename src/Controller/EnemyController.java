@@ -10,6 +10,11 @@ public class EnemyController {
 
     }
 
+    /**
+     * Returns enemy stats in a String array
+     * @return
+     */
+
     public String[] enemyStatsString(){
         String [] enemyStats = new String[4];
 
@@ -20,6 +25,11 @@ public class EnemyController {
 
         return enemyStats;
     }
+
+    /**
+     * Returns enemy stats in an int array
+     * @return
+     */
 
     public int[] enemyStatsInt(){
         int [] enemyStats = new int[4];
@@ -32,10 +42,15 @@ public class EnemyController {
         return enemyStats;
     }
 
+    /**
+     * Generates a randomly chosen enemy with stats suited for the current player level
+     * @param playerLevel
+     */
+
 
 
     public void generateNewEnemy(int playerLevel){
-        int enemyTypeToChoose = (int) Math.random()*4;
+        int enemyTypeToChoose = (int) (Math.random()*4)+1;
         if(enemyTypeToChoose == 1){
             enemy = new Spider(playerLevel);
         }
@@ -50,11 +65,10 @@ public class EnemyController {
         }
     }
 
-    public void correctEnemyHealth() {
-        if (enemy.getHealth() < 0) {
-            enemy.setHealth(0);
-        }
-    }
+    /**
+     * Sets the enemy health to a certain value
+     * @param currentHealth
+     */
 
     public void setEnemyHealth(int currentHealth){
         enemy.setHealth(currentHealth);

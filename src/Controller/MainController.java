@@ -34,8 +34,10 @@ public class MainController extends Application {
             if (playerController.getStatsInt()[3] >= enemyController.enemyStatsInt()[3]) {
                 if ((int) (Math.random() * 6) + playerController.getStatsInt()[5] >= 5) {
                     enemyController.setEnemyHealth(enemyController.enemyStatsInt()[0] + enemyController.enemyStatsInt()[1] - playerController.getStatsInt()[2] * 5);
+                    System.out.println(enemyController.enemyStatsInt()[0]);
                     if (enemyController.enemyStatsInt()[0] > 0) {
                         playerController.setCharacterHealth(playerController.getStatsInt()[0] + playerController.getStatsInt()[1] - enemyController.enemyStatsInt()[2]);
+                        System.out.println(playerController.getStatsInt()[0]);
                         if (playerController.getStatsInt()[0] <= 0) {
                             lose();
                         }
@@ -46,8 +48,10 @@ public class MainController extends Application {
                     }
                 } else {
                     enemyController.setEnemyHealth(enemyController.enemyStatsInt()[0] + enemyController.enemyStatsInt()[1] - playerController.getStatsInt()[2]);
+                    System.out.println(enemyController.enemyStatsInt()[0]);
                     if (enemyController.enemyStatsInt()[0] > 0) {
                         playerController.setCharacterHealth(playerController.getStatsInt()[0] + playerController.getStatsInt()[1] - enemyController.enemyStatsInt()[2]);
+                        System.out.println(playerController.getStatsInt()[0]);
                         if (playerController.getStatsInt()[0] <= 0) {
                             lose();
                         }
@@ -59,9 +63,11 @@ public class MainController extends Application {
                 }
             } else {
                 playerController.setCharacterHealth(playerController.getStatsInt()[0] + playerController.getStatsInt()[1] - enemyController.enemyStatsInt()[2]);
+                System.out.println(playerController.getStatsInt()[0]);
                 if (playerController.getStatsInt()[0] > 0) {
                     if ((Math.random() * 6) + playerController.getStatsInt()[5] >= 5) {
                         enemyController.setEnemyHealth(enemyController.enemyStatsInt()[0] + enemyController.enemyStatsInt()[1] - playerController.getStatsInt()[2] * 5);
+                        System.out.println(enemyController.enemyStatsInt()[0]);
                         if (enemyController.enemyStatsInt()[0] <= 0) {
                             playerController.increasePlayerSats();
                             enemyController.generateNewEnemy(playerController.getCurrentLevel());
@@ -69,6 +75,7 @@ public class MainController extends Application {
                         }
                     } else {
                         enemyController.setEnemyHealth(enemyController.enemyStatsInt()[0] + enemyController.enemyStatsInt()[1] - playerController.getStatsInt()[2]);
+                        System.out.println(enemyController.enemyStatsInt()[0]);
                         if (enemyController.enemyStatsInt()[0] <= 0) {
                             playerController.increasePlayerSats();
                             enemyController.generateNewEnemy(playerController.getCurrentLevel());
@@ -80,8 +87,6 @@ public class MainController extends Application {
                 }
                 
             }
-            fight();
-            System.out.println("Another fight round");
         }
     }
     
