@@ -31,6 +31,10 @@ public class MainView {
         MainController.flee();
     }
     
+    public static void showLoosePane(){
+        GameSceneController.showLoosePane();
+    }
+    
     
     /**
      * Getter and Setter Methods
@@ -43,10 +47,6 @@ public class MainView {
         }
     }
     
-    /**
-     * returns the chosen character
-     * @return chosen character
-     */
     public static String getCharacter() {return MainController.getCharacter();}
     
     public static void setHealth(double health){

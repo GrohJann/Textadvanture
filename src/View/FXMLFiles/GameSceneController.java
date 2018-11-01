@@ -9,12 +9,10 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.ProgressBar;
 import javafx.scene.control.Slider;
-import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
 
-import java.io.File;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -28,6 +26,9 @@ public class GameSceneController implements Initializable {
 
     @FXML
     private Pane audioPane;
+    
+    @FXML
+    private static AnchorPane loosePane;
 
     @FXML
     private ImageView MageAvatar;
@@ -62,6 +63,12 @@ public class GameSceneController implements Initializable {
     @FXML
     private Slider volume;
     
+    @FXML
+    private ImageView knightPic;
+    
+    @FXML
+    private ImageView magePic;
+    
     /**
      *this Method runs directly after/while loading the affiliated View
      */
@@ -79,6 +86,9 @@ public class GameSceneController implements Initializable {
             MageOptions.setVisible(false);
             AssassinOptions.setVisible(false);
             KnightOptions.setVisible(false);
+            
+            knightPic.setVisible(false);
+            magePic.setVisible(false);
         }
         if (MainView.getCharacter().equals("mage")) {
             OrcAvatar.setVisible(false);
@@ -88,6 +98,8 @@ public class GameSceneController implements Initializable {
             OrcOptions.setVisible(false);
             AssassinOptions.setVisible(false);
             KnightOptions.setVisible(false);
+    
+            knightPic.setVisible(false);
         }
         if (MainView.getCharacter().equals("assassin")) {
             MageAvatar.setVisible(false);
@@ -97,6 +109,9 @@ public class GameSceneController implements Initializable {
             MageOptions.setVisible(false);
             OrcOptions.setVisible(false);
             KnightOptions.setVisible(false);
+    
+            knightPic.setVisible(false);
+            magePic.setVisible(false);
         }
         if (MainView.getCharacter().equals("knight")) {
             MageAvatar.setVisible(false);
@@ -106,6 +121,8 @@ public class GameSceneController implements Initializable {
             MageOptions.setVisible(false);
             AssassinOptions.setVisible(false);
             OrcOptions.setVisible(false);
+    
+            magePic.setVisible(false);
         }
     }
 
@@ -168,6 +185,10 @@ public class GameSceneController implements Initializable {
     }
     
     public static void setHealth(double health){
-        healthBar.setProgress(health);
+        //healthBar.setProgress(health);
+    }
+    
+    public static void showLoosePane(){
+        //loosePane.setVisible(true);
     }
 }
