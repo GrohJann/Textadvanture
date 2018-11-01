@@ -62,6 +62,16 @@
                   <Image url="@../../assets/pictures/gui_pics/icons/Options.png" />
                </image>
             </ImageView>
+            <ImageView fx:id="knightPic" fitHeight="288.0" fitWidth="268.0" layoutX="222.0" layoutY="360.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../assets/pictures/gui_pics/Avatar/knight.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="magePic" fitHeight="322.0" fitWidth="240.0" layoutX="174.0" layoutY="317.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../assets/pictures/gui_pics/Avatar/Mage.png" />
+               </image>
+            </ImageView>
          </children></AnchorPane>
       <AnchorPane fx:id="options" prefHeight="788.0" prefWidth="1400.0">
          <children>
@@ -226,6 +236,16 @@
                   </Pane>
                </children>
             </Pane>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="loosePane" prefHeight="787.0" prefWidth="1400.0" visible="false">
+         <children>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#252525" height="787.0" stroke="BLACK" strokeType="INSIDE" width="1400.0" />
+            <Label alignment="CENTER" prefHeight="787.0" prefWidth="1400.0" text="YOU DIED" textFill="#bc0000">
+               <font>
+                  <Font name="Comic Sans MS Bold" size="150.0" />
+               </font>
+            </Label>
          </children>
       </AnchorPane>
    </children>

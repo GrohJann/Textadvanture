@@ -37,11 +37,11 @@ public class MainController extends Application {
             if (playerController.getStatsInt()[3] >= enemyController.enemyStatsInt()[3]) {
                 if ((int) (Math.random() * 6) + playerController.getStatsInt()[5] >= 5) {
                     enemyController.setEnemyHealth(enemyController.enemyStatsInt()[0] + enemyController.enemyStatsInt()[1] - playerController.getStatsInt()[2] * 5);
-                    System.out.println(enemyController.enemyStatsInt()[0]);
+                    System.out.println("Enemy health: " + enemyController.enemyStatsInt()[0]);
                     if (enemyController.enemyStatsInt()[0] > 0) {
                         MainView.setHealth((double) (((playerController.getStatsInt()[0] + playerController.getStatsInt()[1] - enemyController.enemyStatsInt()[2]) / playerController.getCharacterHealth()) / 100));
                         playerController.setCharacterHealth(playerController.getStatsInt()[0] + playerController.getStatsInt()[1] - enemyController.enemyStatsInt()[2]);
-                        System.out.println(playerController.getStatsInt()[0]);
+                        System.out.println("Player health: " + playerController.getStatsInt()[0]);
                         if (playerController.getStatsInt()[0] <= 0) {
                             lose();
                         }
@@ -56,7 +56,7 @@ public class MainController extends Application {
                     if (enemyController.enemyStatsInt()[0] > 0) {
                         MainView.setHealth((double) (((playerController.getStatsInt()[0] + playerController.getStatsInt()[1] - enemyController.enemyStatsInt()[2]) / playerController.getCharacterHealth()) / 100));
                         playerController.setCharacterHealth(playerController.getStatsInt()[0] + playerController.getStatsInt()[1] - enemyController.enemyStatsInt()[2]);
-                        System.out.println(playerController.getStatsInt()[0]);
+                        System.out.println("Player health: " + playerController.getStatsInt()[0]);
                         if (playerController.getStatsInt()[0] <= 0) {
                             lose();
                         }
@@ -69,11 +69,11 @@ public class MainController extends Application {
             } else {
                 MainView.setHealth((double) (((playerController.getStatsInt()[0] + playerController.getStatsInt()[1] - enemyController.enemyStatsInt()[2]) / playerController.getCharacterHealth()) / 100));
                 playerController.setCharacterHealth(playerController.getStatsInt()[0] + playerController.getStatsInt()[1] - enemyController.enemyStatsInt()[2]);
-                System.out.println(playerController.getStatsInt()[0]);
+                System.out.println("Player health: " + playerController.getStatsInt()[0]);
                 if (playerController.getStatsInt()[0] > 0) {
                     if ((Math.random() * 6) + playerController.getStatsInt()[5] >= 5) {
                         enemyController.setEnemyHealth(enemyController.enemyStatsInt()[0] + enemyController.enemyStatsInt()[1] - playerController.getStatsInt()[2] * 5);
-                        System.out.println(enemyController.enemyStatsInt()[0]);
+                        System.out.println("Enemy health: " + enemyController.enemyStatsInt()[0]);
                         if (enemyController.enemyStatsInt()[0] <= 0) {
                             playerController.increasePlayerStats();
                             enemyController.generateNewEnemy(playerController.getCurrentLevel());
@@ -81,7 +81,7 @@ public class MainController extends Application {
                         }
                     } else {
                         enemyController.setEnemyHealth(enemyController.enemyStatsInt()[0] + enemyController.enemyStatsInt()[1] - playerController.getStatsInt()[2]);
-                        System.out.println(enemyController.enemyStatsInt()[0]);
+                        System.out.println("Enemy health: " + enemyController.enemyStatsInt()[0]);
                         if (enemyController.enemyStatsInt()[0] <= 0) {
                             playerController.increasePlayerStats();
                             enemyController.generateNewEnemy(playerController.getCurrentLevel());
@@ -91,7 +91,6 @@ public class MainController extends Application {
                 } else {
                     lose();
                 }
-                
             }
         }
     }
@@ -117,7 +116,7 @@ public class MainController extends Application {
      * Method that runs when the player losses (when playerHealth <= 0)
      */
     public static void lose(){
-    
+        MainView.showLoosePane();
     }
     
     
