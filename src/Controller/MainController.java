@@ -42,7 +42,7 @@ public class MainController extends Application {
                             lose();
                         }
                     } else {
-                        playerController.increasePlayerSats();
+                        playerController.increasePlayerStats();
                         enemyController.generateNewEnemy(playerController.getCurrentLevel());
                         System.out.println("next enemy created");
                     }
@@ -56,7 +56,7 @@ public class MainController extends Application {
                             lose();
                         }
                     } else {
-                        playerController.increasePlayerSats();
+                        playerController.increasePlayerStats();
                         enemyController.generateNewEnemy(playerController.getCurrentLevel());
                         System.out.println("next enemy created");
                     }
@@ -69,7 +69,7 @@ public class MainController extends Application {
                         enemyController.setEnemyHealth(enemyController.enemyStatsInt()[0] + enemyController.enemyStatsInt()[1] - playerController.getStatsInt()[2] * 5);
                         System.out.println(enemyController.enemyStatsInt()[0]);
                         if (enemyController.enemyStatsInt()[0] <= 0) {
-                            playerController.increasePlayerSats();
+                            playerController.increasePlayerStats();
                             enemyController.generateNewEnemy(playerController.getCurrentLevel());
                             System.out.println("next enemy created");
                         }
@@ -77,7 +77,7 @@ public class MainController extends Application {
                         enemyController.setEnemyHealth(enemyController.enemyStatsInt()[0] + enemyController.enemyStatsInt()[1] - playerController.getStatsInt()[2]);
                         System.out.println(enemyController.enemyStatsInt()[0]);
                         if (enemyController.enemyStatsInt()[0] <= 0) {
-                            playerController.increasePlayerSats();
+                            playerController.increasePlayerStats();
                             enemyController.generateNewEnemy(playerController.getCurrentLevel());
                             System.out.println("next enemy created");
                         }

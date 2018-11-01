@@ -15,53 +15,64 @@ public class PlayerController {
     public PlayerController(int playerLevel) {
         this.currentLevel = playerLevel;
     }
-    
+
+    /**
+     * Creates an Assassin
+     */
     public void createPlayerAssasin() {
         this.playerCharacter = new Assassin();
         this.npc = new NPC();
-        npc.setLuck(5);
+        npc.setLuck(4);
         character = "assassin";
     }
-    
+
+    /**
+     * Creates a Knight
+     */
+
     public void createPlayerKnight() {
         this.playerCharacter = new Knight();
         this.npc = new NPC();
         npc.setLuck(1);
         character = "knight";
     }
-    
+
+    /**
+     * Creates a Mage
+     */
+
     public void createPlayerMage() {
         this.playerCharacter = new Mage();
         this.npc = new NPC();
         npc.setLuck(1);
         character = "mage";
     }
-    
+
+    /**
+     * Creates the MEMEBIGBOYYYYYYYYYY
+     */
+
     public void createPlayerMeMeBIIIGBOI() {
         this.playerCharacter = new MeMeBIIIGBOI();
         this.npc = new NPC();
         npc.setLuck(1);
         character = "orc";
     }
+
+    /**
+     *
+     */
     
-    public void correctPlayerHealth() {
-        if (playerCharacter.getHealth() < 0) {
-            playerCharacter.setHealth(0);
-        }
-    }
-    
-    public void increasePlayerSats() {
+    public void increasePlayerStats() {
         int currentHealth = playerCharacter.getHealth();
         int currentArmor = playerCharacter.getArmor();
         int currentStrength = playerCharacter.getStrength();
         int currentSpeed = playerCharacter.getSpeed();
-        int currentLuck = npc.getLuck();
         
         playerCharacter.setHealth(currentHealth + 25);
         playerCharacter.setArmor(currentArmor + 25);
         playerCharacter.setStrength(currentStrength + 25);
         playerCharacter.setSpeed(currentSpeed + 25);
-        npc.setLuck(currentLuck + 1);
         currentLevel = currentLevel + 1;
     }
     

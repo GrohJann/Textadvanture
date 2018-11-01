@@ -48,7 +48,6 @@ public class EnemyController {
      */
 
 
-
     public void generateNewEnemy(int playerLevel){
         int enemyTypeToChoose = (int) (Math.random()*4)+1;
         if(enemyTypeToChoose == 1){
